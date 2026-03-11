@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Build Launcher</title>
+<title>The PROTOTYPE</title>
 
 <style>
 body{
