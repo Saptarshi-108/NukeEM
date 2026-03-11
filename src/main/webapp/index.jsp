@@ -2,60 +2,121 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>The PROTOTYPE</title>
+<title>Do Not Launch</title>
 
 <style>
+
 body{
-    font-family: Arial, sans-serif;
-    background: #0f172a;
-    color: white;
-    text-align: center;
-    margin-top: 150px;
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:black;
+    color:white;
+    font-family:Arial;
+    text-align:center;
 }
 
-button{
-    padding: 15px 40px;
-    font-size: 22px;
-    border: none;
-    border-radius: 8px;
-    background: #22c55e;
-    color: white;
-    cursor: pointer;
+.container{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 }
 
-button:hover{
-    background: #16a34a;
+.warning{
+    font-size:32px;
+    margin-bottom:40px;
 }
 
-#gifArea{
+.redButton{
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    background:red;
+    border:none;
+    box-shadow:0 0 40px darkred;
+    cursor:pointer;
+    font-size:18px;
+}
+
+.redButton:active{
+    transform:scale(0.9);
+}
+
+.flash{
+    animation:flashScreen 0.08s infinite;
+}
+
+@keyframes flashScreen{
+    0%{background:black;}
+    50%{background:white;}
+    100%{background:black;}
+}
+
+#deathScreen{
     display:none;
-    margin-top:40px;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:black;
+    color:red;
+    font-size:48px;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
 }
 
-img{
-    width:500px;
-    border-radius:10px;
+#restart{
+    margin-top:40px;
+    padding:15px 30px;
+    font-size:20px;
+    cursor:pointer;
 }
+
 </style>
 
 <script>
-function launchBuild(){
-    document.getElementById("gifArea").style.display="block";
+
+function launch(){
+    document.body.classList.add("flash");
+
+    setTimeout(function(){
+
+        document.body.classList.remove("flash");
+        document.querySelector(".container").style.display="none";
+        document.getElementById("deathScreen").style.display="flex";
+
+    },2500);
+
 }
+
+function restart(){
+    location.reload();
+}
+
 </script>
 
 </head>
 
 <body>
 
-<h1>This is the prototype to launch a missile at Trump</h1>
-<p><h2>LAUNCH NUKE</h2></p>
+<div class="container">
 
-<button onclick="launchBuild()">BOOM BOOM TIME</button>
+<div class="warning">DO NOT LAUNCH</div>
 
-<div id="gifArea">
-    <h2>NUCLEAR MISSILE LAUNCHED</h2>
-    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDM3a3M2ODJ4a2E3bGlnam54ejZ2NG9zbHFjaHNuN2lrc3d4ang2aSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/4jyU0IuAH6a1q/giphy.gif">
+<button class="redButton" onclick="launch()"></button>
+
+</div>
+
+<div id="deathScreen">
+
+<div>You have died,<br>better luck next time</div>
+
+<button id="restart" onclick="restart()">Restart</button>
+
 </div>
 
 </body>
