@@ -41,7 +41,6 @@ img{
 <script>
 function launchBuild(){
     document.getElementById("gifArea").style.display="block";
-    window.open("https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExajM3azM4cGY3YzRuODN4c3lkeGM3Z3EyZXF3bm0wamlvaDJtMGk2cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/lgcUUCXgC8mEo/giphy.gif","_blank");
 }
 </script>
 
