@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Do Not Launch</title>
+<title>Epileptic</title>
 
 <style>
 
@@ -105,7 +105,7 @@ function restart(){
 
 <div class="container">
 
-<div class="warning">DO NOT LAUNCH</div>
+<div class="warning">DO NOT PRESS</div>
 
 <button class="redButton" onclick="launch()"></button>
 
@@ -113,7 +113,7 @@ function restart(){
 
 <div id="deathScreen">
 
-<div>You have died,<br>better luck next time</div>
+<div> MISSILE LAUNCHED <br>YOU DIED</div>
 
 <button id="restart" onclick="restart()">Restart</button>
 
@@ -121,3 +121,4 @@ function restart(){
 
 </body>
 </html>
+
